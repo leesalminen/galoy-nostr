@@ -40,7 +40,7 @@ function relay_send(ev, url, opts) {
     })
     pub.on('failed', reason => {
       console.log(`failed to publish to ${relay.url}: ${reason}`)
-      reject(new Error(reason))
+      resolve(true)
     })
     pub.on('seen', () => {
       console.log(`we saw the event on ${relay.url}`)
